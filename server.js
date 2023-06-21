@@ -11,7 +11,7 @@ function generateUniqueId() {
   const characters = '0123456789abcdefghijklmnopqrstuvwxyz';
   let uniqueId = '';
 
-  for (let i = 0; i < 4; i++) {
+  for (let i = 0; i < 10; i++) {
     const randomIndex = Math.floor(Math.random() * characters.length);
     uniqueId += characters[randomIndex];
   }

@@ -1,1 +1,7 @@
-[]
+[
+  {
+    "title": "Note Example One",
+    "text": "This note will be saved with an id that is 10 digits long. Later on, the id will be used to delete/render it if necessary.",
+    "id": "k2r6tq7zgt"
+  }
+]
