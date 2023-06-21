@@ -38,6 +38,7 @@ const saveNote = (note) =>
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      'Accept': 'application/json',
     },
     body: JSON.stringify(note),
   });
@@ -72,6 +73,7 @@ const handleNoteSave = () => {
     text: noteText.value,
   };
   saveNote(newNote).then(() => {
+    console.log(newNote);
     getAndRenderNotes();
     renderActiveNote();
   });
