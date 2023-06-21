@@ -54,11 +54,14 @@ app.delete('/api/notes/:id', (req, res) => {
   const { id } = req.params;
   const noteIndex = dataBase.findIndex((note) => note.id === id);
   if (noteIndex === -1) {
-    console.log('note not found');
+    // Send error response so that promise is still resolved.
+    res.status(404).send('Note not found');
     return;
   }
   dataBase.splice(noteIndex, 1);
   fs.writeFileSync('./db/db.json', JSON.stringify(dataBase, null, 2));
+  // Send a success response so that the promise is resolved
+  res.status(200).send('Note deleted successfully'); 
 });
 
 app.listen(PORT, () =>
