@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 // database
 const dataBase = require('./db/db.json');
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 function generateUniqueId() {
